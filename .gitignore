@@ -1,1 +1,6 @@
 /*.suo
+/Vusen.Language.Tests/bin/Debug
+/Vusen.Language.Tests/obj/Debug
+/Vusen.Language/bin/Debug
+/Vusen.Language/obj/Debug
+/*.user
