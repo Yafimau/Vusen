@@ -12,7 +12,17 @@ namespace Vusen.Language
     {
         public RunResult Run(Script script)
         {
-            throw new NotImplementedException();
+            this.CheckCode(script);
+
+            return new RunResult
+                       {
+                           Code = ResultCode.Success
+                       };
+        }
+
+        private void CheckCode(Script script)
+        {
+            
         }
     }
 }

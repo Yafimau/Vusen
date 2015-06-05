@@ -31,13 +31,27 @@ namespace Vusen.Language.Tests
         /// The run test.
         /// </summary>
         [Test]
-        public void RunTest()
+        public void RunEmptyScript()
         {
             var script = new Script();
 
             var result = this.interpreter.Run(script);
 
             Assert.NotNull(result);
+            Assert.AreEqual(ResultCode.Success, result.Code);
+        }
+
+        [Test]
+        public void RunScriptBodyWithInstructions()
+        {
+            var script = new Script();
+            script.Load("http.get(\"tut.by\");");
+
+            var result = this.interpreter.Run(script);
+
+            Assert.NotNull(result);
+            Assert.AreEqual(ResultCode.Success, result.Code);
+            Assert.AreEqual(ResultCode.Success, result.CompilerCheckCode);
         }
     }
 }
