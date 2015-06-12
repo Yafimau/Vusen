@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.2.1502.0911\lib\net40\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,11 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Command.cs" />
+    <Compile Include="Entities\Commands\Http\Get.cs" />
+    <Compile Include="Entities\Commands\InvokeContext.cs" />
+    <Compile Include="Entities\Commands\InvokeParameter.cs" />
+    <Compile Include="Entities\Commands\InvokeResult.cs" />
     <Compile Include="Entities\Scope.cs" />
     <Compile Include="Entities\Script.cs" />
+    <Compile Include="HttpClient\IHttpClient.cs" />
     <Compile Include="Interpreter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RunResult.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
