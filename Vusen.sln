@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vusen.Language", "Vusen.Language\Vusen.Language.csproj", "{4C07D556-08ED-4153-B2B4-43A715A86FFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vusen.Language.Tests", "Vusen.Language.Tests\Vusen.Language.Tests.csproj", "{7A2CF87E-71F9-42F7-BB4B-DBA71A3B1D8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vusen.WindowsService", "Vusen.WindowsService\Vusen.WindowsService.csproj", "{E822A446-81CE-4C29-BCBF-8A41AB00E48F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vusen.Shared", "Vusen.Shared\Vusen.Shared.csproj", "{20DFEA49-6A4A-403C-B6CB-0C6D90648F1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{7A2CF87E-71F9-42F7-BB4B-DBA71A3B1D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A2CF87E-71F9-42F7-BB4B-DBA71A3B1D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A2CF87E-71F9-42F7-BB4B-DBA71A3B1D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E822A446-81CE-4C29-BCBF-8A41AB00E48F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E822A446-81CE-4C29-BCBF-8A41AB00E48F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E822A446-81CE-4C29-BCBF-8A41AB00E48F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E822A446-81CE-4C29-BCBF-8A41AB00E48F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20DFEA49-6A4A-403C-B6CB-0C6D90648F1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20DFEA49-6A4A-403C-B6CB-0C6D90648F1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20DFEA49-6A4A-403C-B6CB-0C6D90648F1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20DFEA49-6A4A-403C-B6CB-0C6D90648F1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
