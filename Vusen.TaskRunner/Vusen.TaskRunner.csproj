@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E822A446-81CE-4C29-BCBF-8A41AB00E48F}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <ProjectGuid>{B6BDE7BE-8E38-4159-8AB9-80BAF125DA52}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Vusen.WindowsService</RootNamespace>
-    <AssemblyName>Vusen.WindowsService</AssemblyName>
+    <RootNamespace>Vusen.TaskRunner</RootNamespace>
+    <AssemblyName>Vusen.TaskRunner</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,51 +31,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
-    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EventLogger.cs" />
-    <Compile Include="ProjectInstaller.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ProjectInstaller.Designer.cs">
-      <DependentUpon>ProjectInstaller.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TaskRunnerService.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TaskRunnerService.Designer.cs">
-      <DependentUpon>TaskRunnerService.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="ITaskRunner.cs" />
+    <Compile Include="Persistance\ITaskRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TaskRunner.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Vusen.Shared\Vusen.Shared.csproj">
-      <Project>{20dfea49-6a4a-403c-b6cb-0c6d90648f1f}</Project>
-      <Name>Vusen.Shared</Name>
+    <ProjectReference Include="..\Vusen.Tasks\Vusen.Tasks.csproj">
+      <Project>{55B118C7-AA5A-414D-A020-50C0EE0197D9}</Project>
+      <Name>Vusen.Tasks</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Vusen.TaskRunner\Vusen.TaskRunner.csproj">
-      <Project>{B6BDE7BE-8E38-4159-8AB9-80BAF125DA52}</Project>
-      <Name>Vusen.TaskRunner</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="ProjectInstaller.resx">
-      <DependentUpon>ProjectInstaller.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

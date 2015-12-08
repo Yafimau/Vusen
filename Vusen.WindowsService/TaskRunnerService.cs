@@ -9,13 +9,14 @@ using System.ServiceProcess;
 using System.Text;
 using System.Threading.Tasks;
 using Vusen.Shared.Logger;
+using Vusen.TaskRunner;
 
 namespace Vusen.WindowsService
 {
     public partial class TaskRunnerService : ServiceBase
     {
         private readonly ILogger _logger;
-
+        private readonly ITaskRunner _taskRunner;
         private ServiceStatus _serviceStatus;
 
         public enum ServiceState
@@ -48,6 +49,8 @@ namespace Vusen.WindowsService
         {
             InitializeComponent();
             _logger = new EventLogger(ServiceName);
+            _taskRunner = new TaskRunner.TaskRunner();
+
             _serviceStatus = new ServiceStatus
             {
                 dwCurrentState = ServiceState.SERVICE_STOPPED,
@@ -58,6 +61,7 @@ namespace Vusen.WindowsService
 
         protected override void OnStart(string[] args)
         {
+            _taskRunner.Start();
             SetServiceStatus(ServiceState.SERVICE_RUNNING);
 
             _logger.LogMessage($"{ServiceName} service started.");
@@ -65,6 +69,7 @@ namespace Vusen.WindowsService
 
         protected override void OnStop()
         {
+            _taskRunner.Shutdown();
             SetServiceStatus(ServiceState.SERVICE_STOPPED);
 
             _logger.LogMessage($"{ServiceName} service stopped.");
