@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Vusen.Language.HttpClient
+namespace Vusen.Shared
 {
-    public interface IHttpClient
+    public interface IService
     {
     }
 }

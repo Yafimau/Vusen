@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vusen.Language.Entities.Types;
 
 namespace Vusen.Language.Entities.Commands
 {
@@ -15,6 +16,7 @@ namespace Vusen.Language.Entities.Commands
         }
 
         private bool isSuccess;
+        private TypeBase _result;
 
         private ResultCode code;
 
@@ -29,6 +31,11 @@ namespace Vusen.Language.Entities.Commands
             {
                 return this.isSuccess;
             }
+        }
+
+        public TypeBase Result
+        {
+            get { return _result; }
         }
 
         public ResultCode Code

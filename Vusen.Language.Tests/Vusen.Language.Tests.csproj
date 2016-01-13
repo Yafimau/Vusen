@@ -58,6 +58,10 @@
       <Project>{4c07d556-08ed-4153-b2b4-43a715a86ffc}</Project>
       <Name>Vusen.Language</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Vusen.Shared\Vusen.Shared.csproj">
+      <Project>{20dfea49-6a4a-403c-b6cb-0c6d90648f1f}</Project>
+      <Name>Vusen.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

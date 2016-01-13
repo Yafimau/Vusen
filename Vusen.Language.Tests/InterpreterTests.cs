@@ -7,6 +7,9 @@
 // </summary>
 // --------------------------------------------------------------------------------------------------------------------
 
+using Moq;
+using Vusen.Shared;
+
 namespace Vusen.Language.Tests
 {
     using NUnit.Framework;
@@ -24,7 +27,9 @@ namespace Vusen.Language.Tests
         [SetUp]
         public void SetUp()
         {
-            this.interpreter = new Interpreter();
+            var serviceLocatorMock = new Mock<IServiceLocator>();
+
+            this.interpreter = new Interpreter(serviceLocatorMock.Object);
         }
 
         /// <summary>
@@ -42,7 +47,7 @@ namespace Vusen.Language.Tests
         }
 
         [Test]
-        public void RunScriptBodyWithInstructions()
+        public void Interpreter_Run_with_simple_script_returns_success()
         {
             var script = new Script();
             script.Load("http.get(\"tut.by\");");
